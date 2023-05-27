@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', [UserController::class, 'index']);
-// Route::get('/user', 'UserController@index');
+Route::resource('product', ProductController::class );
+
+Route::resource('category', CategoryController::class);
